@@ -1,0 +1,13 @@
+const express = require('express');
+const app = express();
+const path = require('path');
+const http = require('http');
+const server = http.createServer(app);
+
+// Esto es lo que hace que se vea tu index.html
+app.use(express.static(path.join(__dirname, 'public')));
+
+const PORT = process.env.PORT || 3000;
+server.listen(PORT, '0.0.0.0', () => {
+    console.log(Servidor Mach Love listo en puerto ${PORT});
+});
