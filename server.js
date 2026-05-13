@@ -1,10 +1,10 @@
 const express = require('express');
 const app = express();
 
-// ESTO ES LO ÚNICO QUE NECESITAS:
+// AHORA SÍ: Comilla abierta y comilla cerrada
 app.use(express.static('public'));
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log('Mach Love está vivo');
+    console.log('Mach Love funcionando al 100');
 });
