@@ -1,13 +1,11 @@
 const express = require('express');
-const express = require('express');
 const app = express();
+const path = require('path');
 
-// Usamos la carpeta public directamente
+// Esto hace que cargue tu index.html automáticamente
 app.use(express.static('public'));
 
-// Puerto automático para Render
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-    console.log('Servidor Mach Love funcionando');
-});
+    console.log('Servidor listo');
