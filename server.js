@@ -1,12 +1,16 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const app = express();
 
-// Esto le dice al servidor que busque tus archivos en la carpeta 'public'
+// Esto obliga al servidor a ignorar cualquier texto y cargar tu carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-const PORT = process.env.PORT || 3000;
+// Si alguien entra a la raíz, le mandamos el index.html sí o sí
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log('Servidor Mach Love listo');
+    console.log('Mach Love listo');
 });
